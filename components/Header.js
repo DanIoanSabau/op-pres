@@ -1,18 +1,18 @@
 import Link from '@/components/Link'
 import siteMetadata from '@/data/siteMetadata'
-import Logo from '@/data/logo.svg'
 import headerNavLinks from '@/data/headerNavLinks'
 import MobileNav from '@/components/MobileNav'
+import Image from "next/image";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 flex w-full max-w-7xl items-center justify-center py-8 sm:w-3/4 sm:justify-between">
+    <header className="sticky top-0 flex w-full max-w-7xl items-center justify-center py-8 sm:w-3/4 sm:justify-between z-20">
       <div>
         <Link href="/" aria-label={siteMetadata.siteName}>
           {/* icon + site = logo */}
           <div className="flex items-center justify-between">
             <div className="mr-3">
-              <Logo />
+              <Image src={siteMetadata.siteLogo} className="w-64 h-64 rounded-full" width={64} height={64}/>
             </div>
             <div className="text-2xl font-semibold">{siteMetadata.siteName}</div>
           </div>
